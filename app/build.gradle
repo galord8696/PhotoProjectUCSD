@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+//apply plugin: 'com.chaquo.python'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+//    configurations.all {exclude group: 'com.android.support', module: 'support-v13'}
+    ndkVersion '21.0.6113669'
+    defaultConfig {
+        applicationId "com.example.photoproject"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        python {
+////            pip {
+////                install "six==1.10.0"
+////                install "scipy==1.0.1"
+////                install "LocalPackage-1.2.3-py2.py3-none-any.whl"
+////                install "-r", "requirements.txt"
+////            }
+//        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+//        ndk {
+//            moduleName "lslAndroid"
+//            abiFilters 'armeabi-v7a', 'arm64-v8a'
+////            abiFilters 'arm64-v8a'
+//        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+//    externalNativeBuild {
+//        ndkBuild {
+//            path '../app/src/main/jni/Android.mk'
+//        }
+//    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.github.isaac-udy:Kfilter:1.1.3'
+    implementation 'com.github.zomato:androidphotofilters:1.0.1'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.github.mukeshsolanki:easypreferences:1.0.6'
+
+    implementation 'org.tensorflow:tensorflow-android:+'
+    implementation files('libs/Algorithm_1.5.jar')
+    implementation files('libs/Basicutility_1.3.3.jar')
+    implementation files('libs/commons-io-2.4.jar')
+    implementation files('libs/commons-net-3.5.jar')
+//    implementation files('libs/commons-math3-3.6.1.jar')
+    implementation files('libs/d2xx.jar')
+    implementation files('libs/eegproduct_1.5.jar')
+    implementation files('libs/jmatio-1.0.jar')
+    implementation files('libs/MQTT_1.0.jar')
+    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly'
+
+    implementation 'com.github.haifengl:smile-core:1.5.3'
+//    implementation files('libs/jASR.jar')
+//    implementation files('libs/rtandroid-20161201.jar')
+}
